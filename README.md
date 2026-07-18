@@ -4,4 +4,6 @@ This repository contains files for the Linux kernel packages (configs). Currentl
 - `7.0.11`
 - `7.1.4`
 
-It also contains some tooling in `tools/`.
+It also contains some tooling for compilation in `tools/`:
+- `mkstage.sh` - create stage dirs `stage` and `stage-h` for kernel headers
+- `mkpkg.sh` - create car pkgs `linux-stable.tar.zst` and `linux-headers.tar.zst`, then print sha256sums
