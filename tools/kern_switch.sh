@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Used in the package as /usr/bin/kernel-switch
+# Run with root, always
+
 printf "\033[1m\033[94m→\033[0m Switching kernel versions\n"
 printf "  Enter 'yes' if you want to switch kernels. "
 read confirm
@@ -24,3 +27,6 @@ read
 # If the user inputs $(reboot) then WHY WOULD ANYONE DO THAT BRO
 # but accidentally OH YEAH SURE I ACCIDENTALLY TYPED "$(reboot)"
 su -c "ln -sf /boot/vmlinuz-$ver /boot/vmlinuz"
+
+printf "  \033[1m\033[94m→\033[0m Regenerating initramfs\n"
+nullinitrd
